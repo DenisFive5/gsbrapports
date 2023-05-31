@@ -1,0 +1,51 @@
+﻿<Window x:Class="GsbRapports.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GsbRapports"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        Title="GSB gestion des rapports de visites" 
+        Height="500" Width="800" Icon="gsb.jpg" HorizontalAlignment="Center">
+    <Grid>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top" x:Name="DckMenu" Visibility="Collapsed">
+                <MenuItem Header="_Fichier">
+                    <MenuItem Header="_Quitter"/>
+                </MenuItem>
+                <MenuItem Header="_Médecins">
+                </MenuItem>
+                <MenuItem Header="_Visites">
+                </MenuItem>
+                <MenuItem Header="_Médicaments">
+                </MenuItem>
+                <MenuItem Header="_Visiteurs" Click="VoirVisiteurs_Click">
+                </MenuItem>
+                <MenuItem Header="_Familles">
+                    <MenuItem Header="_Voir" Click="MenuItem_Click"/>
+                    <MenuItem Header="_Modifier" Click="MenuItem_Click_1" />
+                    <MenuItem Header="_Ajouter" Click="MenuItem_Click_2" />
+                </MenuItem>
+            </Menu>
+
+            <TextBlock Visibility="Collapsed" x:Name="txtBonjour" Width="150" Height="30" Margin="50,30,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFADE693"/>
+            <Grid DockPanel.Dock="Left">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel MinWidth="150" x:Name="stPanel" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <TextBlock Text="Login" Margin="0,0,0,0"/>
+                        <TextBox x:Name ="txtLogin" Height="25" Margin="0,5,0,0" />
+                        <TextBlock Text="Mot de passe" Margin="0,15,0,0"/>
+                        <PasswordBox x:Name ="txtMdp" Height="25" Margin="0,5,0,0"/>
+                        <Button x:Name="btnValider" Height="30" Margin="0,15,0,0" Content="Valider" Click="btnValider_Click"/>
+                    </StackPanel>
+                    <Image Grid.Column="1" Height="200" Width="241" Source="gsb.jpg" x:Name="imgLogo" />
+                </Grid>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</Window>
